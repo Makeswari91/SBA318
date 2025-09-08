@@ -10,17 +10,31 @@ const PORT = 3000;
 
 //middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-//route
+//routes
 app.use('/api/users', usersRoutes);
 app.use('/api/posts', postsRoutes);
-app.use('/', commentsRoutes);
+app.use('/api/comments', commentsRoutes);
 
-app.get('/', (req, res) => {
-  res.send('Testing');
-});
+app.get('/', (req,res)=>
+  {
+    res.send(`Testing`);
+  })
 
+app.post('/', (req,res)=>
+  {
+    res.send(`Testing post`);
+  })
+app.put('/:id', (req,res)=>
+  {
+    res.send(`Testing update`);
+  })
 
+app.delete('/:id', (req,res)=>
+  {
+    res.send(`Testing delete`);
+  })
 //globalerror handling
 app.use(function (err, req, res, next) {
   res.status(500).json({ msg: err.message });
