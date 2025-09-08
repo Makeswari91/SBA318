@@ -22,7 +22,9 @@ app.get('/', (req, res) => {
 
 
 //globalerror handling
-
+app.use(function (err, req, res, next) {
+  res.status(500).json({ msg: err.message });
+});
 
 //server listener
 app.listen(PORT, () => 
