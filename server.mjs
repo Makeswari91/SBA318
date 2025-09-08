@@ -13,9 +13,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //routes
-app.use('/api/users', usersRoutes);
-app.use('/api/posts', postsRoutes);
-app.use('/api/comments', commentsRoutes);
+app.use('/users', usersRoutes);
+app.use('/posts', postsRoutes);
+app.use('/comments', commentsRoutes);
 
 app.get('/', (req,res)=>
   {
