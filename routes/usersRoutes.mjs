@@ -27,7 +27,7 @@ router
         res.json(user);
     }else res.status(400).json({msg: "Insufficient Data"})
 });
-//show one user route
+// show one user route
 
 router
   .route("/")
