@@ -34,6 +34,20 @@ router
     res.status(201).json({msg: 'New entry created', item: newentry});
 
 })
+  .put((req,res) =>{
+    let id = Number(req.params.id);
+ users.splice(id, 1, req.body)
 
+
+res.json({msg: 'Item updated', item: req.body});
+})
+
+ .delete((req, res) => {
+  let id = Number(req.params.id);
+
+  users.splice(id, 1)
+
+  res.json({ msg: "Item deleted" });
+});
 
 export default router;
