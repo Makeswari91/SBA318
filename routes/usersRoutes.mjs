@@ -11,7 +11,6 @@ router
    
 
 // show one user route
-
 router
   .route("/:id")
   .get((req,res)=>{

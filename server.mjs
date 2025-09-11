@@ -32,7 +32,7 @@ app.use('/posts', postsRoutes);
 app.use('/comments', commentsRoutes);
 app.get('/home', (req, res)=>{
 
-     let options = {title: 'Makeswari'}; 
+     let options = {title: 'Add User'}; 
      res.render('index', options)
 
 })
